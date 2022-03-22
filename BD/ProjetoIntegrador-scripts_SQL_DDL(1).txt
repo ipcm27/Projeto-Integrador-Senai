@@ -1,0 +1,44 @@
+CREATE DATABASE EmpresaY;
+
+CREATE TABLE IF NOT EXISTS `EmpresaY`.`chamado` (
+  `id` INT NOT NULL,
+  `distPercorrida` FLOAT NOT NULL,
+  `idVeiculo` INT NOT NULL,
+  `idEnderecoAtendimento` INT NOT NULL,
+  `idColaborador` INT NOT NULL,
+  PRIMARY KEY (`id`, `idVeiculo`, `idEnderecoAtendimento`, `idColaborador`),
+  INDEX `fk_chamado_veiculo_idx` (`idVeiculo` ASC) VISIBLE,
+  INDEX `fk_chamado_endereco_atendimento1_idx` (`idEnderecoAtendimento` ASC) VISIBLE,
+  INDEX `fk_chamado_colaborador1_idx` (`idColaborador` ASC) VISIBLE,
+  CONSTRAINT `fk_chamado_veiculo`
+    FOREIGN KEY (`idVeiculo`)
+    REFERENCES `mydb`.`veiculo` (`id`)
+  CONSTRAINT `fk_chamado_endereco_atendimento1`
+    FOREIGN KEY (`idEnderecoAtendimento`)
+    REFERENCES `mydb`.`enderecoAtendimento` (`id`)
+  CONSTRAINT `fk_chamado_colaborador1`
+    FOREIGN KEY (`idColaborador`)
+    REFERENCES `mydb`.`colaborador` (`id`)
+
+CREATE TABLE IF NOT EXISTS `EmpresaY`.`veiculo` (
+  `id` INT NOT NULL,
+  `modelo` VARCHAR(45) NULL,
+  `disponivel` TINYINT NOT NULL,
+  `quilometragemAtual` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+
+CREATE TABLE IF NOT EXISTS `EmpresaY`.`colaborador` (
+  `id` INT NOT NULL,
+  `nome` VARCHAR(60) NOT NULL,
+  `habilitado` TINYINT NOT NULL,
+  PRIMARY KEY (`id`))
+
+CREATE TABLE IF NOT EXISTS `EmpresaY`.`enderecoAtendimento` (
+  `id` INT NOT NULL,
+  `UF` VARCHAR(45) NULL,
+  `municipio` VARCHAR(45) NULL,
+  `bairro` VARCHAR(45) NULL,
+  `rua` VARCHAR(45) NOT NULL,
+  `numero` VARCHAR(45) NOT NULL,
+  `cep` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
