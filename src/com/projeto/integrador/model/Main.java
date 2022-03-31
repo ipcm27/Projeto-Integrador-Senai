@@ -1,4 +1,4 @@
-package com.projeto.integrador;
+package com.projeto.integrador.model;
 
 public class Main {
 
