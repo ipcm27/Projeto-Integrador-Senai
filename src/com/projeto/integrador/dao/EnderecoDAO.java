@@ -11,7 +11,7 @@ public class EnderecoDAO {
 			private static EnderecoDAO  instance;
 			private List<Endereco> listaEnderecos = new ArrayList<>();
 			
-			public EnderecoDAO getInstance() {
+			public static EnderecoDAO getInstance() {
 				if (instance == null){
 					instance = new EnderecoDAO();
 				}

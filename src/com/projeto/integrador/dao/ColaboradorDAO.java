@@ -10,7 +10,7 @@ public class ColaboradorDAO {
 		private static ColaboradorDAO instance;
 		private List<Colaborador> listaColaboradores = new ArrayList<>();
 		
-		public ColaboradorDAO getInstance() {
+		public static ColaboradorDAO getInstance() {
 			if (instance == null){
 				instance = new ColaboradorDAO();
 			}
