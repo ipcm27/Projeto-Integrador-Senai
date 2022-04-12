@@ -1,5 +1,4 @@
 package com.projeto.integrador.controller;
-
 import java.util.List;
 
 import com.projeto.integrador.dao.ChamadoDAO;

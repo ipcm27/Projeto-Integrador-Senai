@@ -1,7 +1,7 @@
 package com.projeto.integrador.dao;
 import java.util.ArrayList;
 import java.util.List;
-import com.projeto.integrador.model.Endereco;
+import com.projeto.integrador.model.EnderecoAtendimento;
 
 public class EnderecoDAO {
 	
@@ -9,7 +9,7 @@ public class EnderecoDAO {
 
 			
 			private static EnderecoDAO  instance;
-			private List<Endereco> listaEnderecos = new ArrayList<>();
+			private List<EnderecoAtendimento> listaEnderecos = new ArrayList<>();
 			
 			public static EnderecoDAO getInstance() {
 				if (instance == null){
@@ -19,11 +19,11 @@ public class EnderecoDAO {
 				
 			}
 			
-			public void salvar(Endereco colaborador) {
-				listaEnderecos.add(colaborador);
+			public void salvar(EnderecoAtendimento endereco) {
+				listaEnderecos.add(endereco);
 			}
 			
-			public void atualizar(Endereco endereco) {
+			public void atualizar(EnderecoAtendimento endereco) {
 				listaEnderecos.set(endereco.getId(),endereco);
 			}
 			
@@ -31,8 +31,8 @@ public class EnderecoDAO {
 				listaEnderecos.remove(idEndereco);
 			}
 			
-			public List<Endereco> listar() {
+			public List<EnderecoAtendimento> listar() {
 				 return listaEnderecos;
 			}
 
-		}
+}
