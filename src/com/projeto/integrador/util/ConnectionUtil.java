@@ -12,7 +12,7 @@ public class ConnectionUtil {
     public static Connection getConnection(){
         try { 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/poo";
+            String url = "jdbc:mysql://localhost:3306/pegada_carbono";
             con = DriverManager.getConnection(url,"root","");
             con.setAutoCommit(true);
             return con;
