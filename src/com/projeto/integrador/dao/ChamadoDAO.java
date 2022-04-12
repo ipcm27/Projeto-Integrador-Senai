@@ -10,7 +10,7 @@ public class ChamadoDAO {
 	private static ChamadoDAO instance;
 	private List<Chamado> listaChamados = new ArrayList<>();
 	
-	public ChamadoDAO getInstance() {
+	public static ChamadoDAO getInstance() {
 		if (instance == null){
 			instance = new ChamadoDAO();
 		}
@@ -23,7 +23,7 @@ public class ChamadoDAO {
 	}
 	
 	public void atualizar(Chamado chamado) {
-		listaChamados.set(chamado.getIdChamado(),chamado)
+		listaChamados.set(chamado.getIdChamado(),chamado);
 	}
 	
 	public void deletar(int idChamado) {

@@ -1,6 +1,6 @@
 package com.projeto.integrador.model;
 
-public class Endereco {
+public class EnderecoAtendimento {
 	private int id;
 	private String uf;
 	private String cidade;
@@ -8,9 +8,9 @@ public class Endereco {
 	private String rua;
 	private int numero;
 	private String cep;
-	private int distanciaSede;
+
 	
-	public Endereco(int id, String uf, String cidade, String bairro, String rua, int numero, String cep,
+	public EnderecoAtendimento(int id, String uf, String cidade, String bairro, String rua, int numero, String cep,
 			int distanciaSede) {
 		super();
 		this.id = id;
@@ -20,7 +20,7 @@ public class Endereco {
 		this.rua = rua;
 		this.numero = numero;
 		this.cep = cep;
-		this.distanciaSede = distanciaSede;
+		
 	}
 
 	public int getId() {
@@ -51,9 +51,6 @@ public class Endereco {
 		return cep;
 	}
 
-	public int getDistanciaSede() {
-		return distanciaSede;
-	}
 
 	public void setId(int id) {
 		this.id = id;
@@ -83,13 +80,5 @@ public class Endereco {
 		this.cep = cep;
 	}
 
-	public void setDistanciaSede(int distanciaSede) {
-		this.distanciaSede = distanciaSede;
-	}
-	
-	
-	
-	
-	
 
 }

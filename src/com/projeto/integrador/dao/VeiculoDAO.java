@@ -9,7 +9,7 @@ public class VeiculoDAO {
 				private static VeiculoDAO  instance;
 				private List<Veiculo> listaVeiculos = new ArrayList<>();
 				
-				public VeiculoDAO getInstance() {
+				public static VeiculoDAO getInstance() {
 					if (instance == null){
 						instance = new VeiculoDAO();
 					}
@@ -33,11 +33,6 @@ public class VeiculoDAO {
 					 return listaVeiculos;
 				}
 
-			}
-
-
 
 	}
 
-
-}
